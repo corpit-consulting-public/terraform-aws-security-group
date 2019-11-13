@@ -101,6 +101,10 @@ variable "rules" {
     sisense-web  = [8081, 8081, "tcp", "Sisense Web"] 
     sisense-nifi = [8083, 8083, "tcp", "Sisense Nifi"]
 
+    # Custom TCP
+    sisense-https-8081 = [8081,8081, "tcp", "Custom-HTTPS-Sisense-8081"]
+    sisense-https-8083 = [8083,8083, "tcp", "Custom-HTTPS-Sisense-8083"]
+
     # Splunk
     splunk-indexer-tcp = [9997, 9997, "tcp", "Splunk indexer"]
     splunk-web-tcp = [8000, 8000, "tcp", "Splunk Web"]
@@ -289,11 +293,10 @@ variable "auto_groups" {
     }
     
     sisense = {
-        ingress_rules   = ["sisense-web","sisense-nifi"]
+        ingress_rules   = ["sisense-https-8081", "sisense-https-8083"]
         ingress_with_self = ["all-all"]
         egress_rules      = ["all-all"]
     }
-
     splunk = {
       ingress_rules     = ["splunk-indexer-tcp", "splunk-clients-tcp", "splunk-splunkd-tcp", "splunk-hec-tcp"]
       ingress_with_self = ["all-all"]
