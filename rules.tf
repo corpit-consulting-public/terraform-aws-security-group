@@ -121,6 +121,10 @@ variable "rules" {
     # Redshift
     redshift-tcp = [5439, 5439, "tcp", "Redshift"]
 
+    # Sisense custom
+    sisense-https-8081 = [8081, 8081, "tcp", "Sisense 8081"]
+    sisense-https-8083 = [8083, 8083, "tcp", "Sisense 8083"]
+
     # Splunk
     splunk-indexer-tcp = [9997, 9997, "tcp", "Splunk indexer"]
     splunk-clients-tcp = [8080, 8080, "tcp", "Splunk clients"]
@@ -336,6 +340,12 @@ variable "auto_groups" {
       ingress_rules     = ["redshift-tcp"]
       ingress_with_self = ["all-all"]
       egress_rules      = ["all-all"]
+    }
+    
+    sisense = {
+        ingress_rules   = ["sisense-https-8081", "sisense-https-8083"]
+        ingress_with_self   = ["all-all"]
+        egress_rules        = ["all-all"]
     }
 
     splunk = {

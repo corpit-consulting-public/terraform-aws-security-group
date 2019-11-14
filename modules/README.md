@@ -29,6 +29,7 @@ List of Security Groups implemented as Terraform modules
 * [rdp](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/rdp)
 * [redis](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/redis)
 * [redshift](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/redshift)
+* [sisense](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/sisense)
 * [splunk](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/splunk)
 * [squid](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/squid)
 * [ssh](https://github.com/terraform-aws-modules/terraform-aws-security-group/tree/master/modules/ssh)
